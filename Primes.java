@@ -15,12 +15,13 @@ public class Primes {
         int n = Integer.parseInt(args[0]);
         int per;
         int count = 0;
-        
+        System.out.println("Prime numbers up to " + n + ":");
         for (int i=2; i<=n; i++)
         {
             if (isPrime(i) == true)
             {
                 count++;
+                System.out.println(i);
             }
         }
         per = (int)(100 * count / n);
