@@ -183,31 +183,45 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
-        int count1 = str1.length();
-        int count2 = str2.length();
+    int count1 = str1.length();
+    int count2 = str2.length();
 
-        for (int i=0; i<Math.min(count1, count2); i++)
+    for (int i = 0; i < Math.min(count1, count2); i++)
+    {
+        char c1 = str1.charAt(i);
+        char c2 = str2.charAt(i);
+
+        if (c1 != c2)
         {
-            if (str1.charAt(i) != str2.charAt(i))
+            if (c1 >= 'A' && c1 <= 'Z' && c2 >= 'a' && c2 <= 'z')
             {
-                if (str1.charAt(i) < str2.charAt(i))
-                {
-                    return -1;
-                }
-                if (str1.charAt(i) > str2.charAt(i))
-                {
-                    return 1;
-                }
+                return 1;
+            }
+            if (c1 >= 'a' && c1 <= 'z' && c2 >= 'A' && c2 <= 'Z')
+            {
+                return -1;
+            }
+
+            if (c1 < c2)
+            {
+                return -1;
+            }
+            if (c1 > c2)
+            {
+                return 1;
             }
         }
-        if (count1 < count2)
-        {
-            return -1;
-        }
-        if (count1 > count2)
-        {
-            return 1;
-        }
-        return 0;
     }
+
+    if (count1 < count2)
+    {
+        return -1;
+    }
+    if (count1 > count2)
+    {
+        return 1;
+    }
+
+    return 0;
+}
 }
