@@ -185,6 +185,10 @@ public class ArrCharOps {
     public static int compareTo(String str1, String str2) {
         int count1 = str1.length();
         int count2 = str2.length();
+        if(str1.isEmpty() || str2.isEmpty())
+        {
+            return -2;
+        }
 
         for (int i=0; i<Math.min(count1, count2); i++)
         {
