@@ -204,7 +204,7 @@ public class ArrCharOps {
         {
             return -1;
         }
-        if (count2 < count1)
+        if (count1 > count2)
         {
             return 1;
         }
